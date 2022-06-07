@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+    <script src="dist/jquery.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <div id="content">
+                <!-- <embed width="600" src="index.pdf" background-color="4292533472" height="200"> -->
+                <iframe src="index.pdf" width="100%" height="1000px">
+                </iframe>
+            </div>            
+        </div>
+
+        <div id="setting">
+            <div>
+                <table>
+                    <tr>
+                        <th>Print</th>
+                        <th></th>
+    
+                    </tr>
+                    
+                    <tr>
+                        <td>Destination</td>
+                        <td id="destination">
+                            <select class="form-select selectboxDestination">
+                            </select>
+                        </td>
+        
+                    </tr>
+                    <tr>
+                        <td>Pages</td>
+                        <td id="destination">
+                            <select class="form-select selectboxDestination">
+                            </select>
+                        </td>
+        
+                    </tr>
+                    <tr>
+                        <td>Layout</td>
+                        <td>Maria Anders</td>
+        
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>Maria Anders</td>
+        
+                    </tr>
+
+                    <tr>
+                        <td>Scale</td>
+                        <td>
+                            <div class="btn-group">
+                                <input type="radio" class="btn-check" name="options" id="radio1" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="radio1">Radio 1</label>
+                            
+                                <input type="radio" class="btn-check" name="options" id="radio2" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary" for="radio2">Radio 2</label>
+
+                            </div>
+
+                        </td>
+        
+                    </tr>
+
+
+                     <tr>
+                        <td>Page</td>
+                        <td>Maria Anders</td>
+        
+                    </tr>
+
+
+                    <tr>
+                        <td>Page</td>
+                        <td>Maria Anders</td>
+        
+                    </tr>
+
+
+                    <tr>
+                        <td>Page</td>
+                        <td>Maria Anders</td>
+        
+                    </tr>
+
+
+                    <tr>
+                        <td>Page</td>
+                        <td>Maria Anders</td>
+        
+                    </tr>
+
+                    <tr>
+                       <td>Page</td>
+                       <td>Maria Anders</td>
+       
+                   </tr>
+
+
+                   <tr>
+                       <td>Page</td>
+                       <td>Maria Anders</td>
+       
+                   </tr>
+
+                   <tr>
+                      <td>Page</td>
+                      <td>Maria Anders</td>
+      
+                  </tr>
+
+
+                  <tr>
+                      <td>Page</td>
+                      <td>Maria Anders</td>
+      
+                  </tr>
+              
+
+                </table> 
+            </div>
+     
+    
+        </div>
+
+        <div class="printBottom">
+            <button type="button" class="btn btn-primary">Print</button>
+            <button type="button" class="btn btn-dark">Cancel</button>
+        </div>  
+
+    </div>
+</body>
+</html>
+
+<script>
+        (async function(){
+            const destination = await window.myAPI.getPrinters()
+            const selectBoxdeStination = destination.map((item) => {
+                return `<option value=${item.name}>${item.displayName}</option>`
+            })
+            console.log(destination)
+            $(".selectboxDestination").append(selectBoxdeStination.join(''));
+        })();
+
+
+
+
+</script>
